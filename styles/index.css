@@ -45,10 +45,14 @@ header nav {
     color: black;
 }
 .menu li:hover {
-    background-color: #607EA6;
+    background-color: #7597c488;
     transition: 0.5s;
-    font-size: 1.5rem;
 }
+.menu li a:hover {
+    font-size: 1.8rem;
+    transition: 0.5s;
+}
+
 main {
     display: flex;
     margin: 60px 0;
