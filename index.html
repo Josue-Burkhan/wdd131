@@ -1,10 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-7">
-        <title>WDD 131</title>
-    </head>
-    <body>
-        <h1>WDD 131 - Joshua</h1>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>My Home - Josue A.</title>
+</head>
+<body>
+    <header>
+        <div class="page-title">
+            <h1>WDD 131: Dynamic Web Fundamentals - Josue A. Bailon</h1>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">I-Learn</a></li>
+                <li><a href="#">Scripture</a></li>
+                <li><a href="#">Final Project</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="about-me">
+            <div class="about-me-title">
+                <h3>About me</h3>
+            </div>
+            <div class="about-me-bio">
+                <p>Josue A. Bailon Velasquez is a Peruvian student passionate about web design. For years, he has been dedicated to learning and improving his skills in programming and web development. With big aspirations, he strives for continuous self-improvement and aims to take his knowledge to the next level in the future.</p>
+                <img src="images/my-photo.jpg">
+            </div>
+            <h4>Puno, Peru</h3>
+                <hr>
+            <div class="my-country">
+                <div class="img-my-country">
+                    <img src="images/flag peru.svg">
+                    <span><i>Official Flag of Peru</i></span>
+                </div>
+                <p>Peru is home to Machu Picchu, an ancient wonder of the world that draws visitors from around the globe. Its rich cultural heritage is complemented by world-renowned cuisine, featuring dishes like ceviche and lomo saltado. Additionally, its vibrant traditions and festivals further enrich the Peruvian experience.</p>
+            </div>
+        </section>
+        <div class="web-resources">
+            <div class="web-resources-title">
+                <h3>Web Dev Resources</h3> 
+            </div>  
+            <div class="resources">
+                <ul>
+                    <li><a href="#">Dev to Community</a></li>
+                    <li><a href="#">CSS Tricks</a></li>
+                    <li><a href="#">My Github</a></li>
+                    <li><a href="#">Udemy</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>@2024 Josue A. Bailon Velasquez - Peru</p>
+        <p class="modification">Last Modification: <span id="last-modified"></span></p>
+    </footer>
+</body>
+<script>
+    document.getElementById("last-modified").textContent = document.lastModified;
+</script>
+
 </html>
