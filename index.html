@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A personal page where I will be uploading everything I learned in the WDD-131 program.">
-    <meta name="author" content="Josue A. Bailon">
+    <meta name="description" content="A personal page where I will be regularly uploading everything I’ve learned throughout the WDD-131 program, including projects, assignments, and various skills acquired. This space will serve as a portfolio showcasing my progress and growth in web design and development.">
+    <meta name="author" content="Josue A. Bailon Velasquez">
     <link rel="stylesheet" href="styles/index.css">
-    <title>My Home - Josue A.</title>
+    <script src="script/index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+    <title>WDD 131 - Dynamic Web Fundamentals - Josue A. Bailon</title>
 </head>
 <body>
     <header>
@@ -25,7 +29,7 @@
     <main>
         <section class="about-me">
             <div class="about-me-title">
-                <h3>About me</h3>
+                <h2>About me</h2>
             </div>
             <div class="about-me-bio">
                 <p>Josue A. Bailon Velasquez is a Peruvian student passionate about web design. For years, he has been dedicated to learning and improving his skills in programming and web development. With big aspirations, he strives for continuous self-improvement and aims to take his knowledge to the next level in the future.</p>
@@ -43,7 +47,7 @@
         </section>
         <div class="web-resources">
             <div class="web-resources-title">
-                <h3>Web Dev Resources</h3> 
+                <h2>Web Dev Resources</h2> 
             </div>  
             <div class="resources">
                 <ul>
@@ -60,7 +64,4 @@
         <p class="modification">Last Modification: <span id="last-modified"></span></p>
     </footer>
 </body>
-    <script>
-    document.getElementById("last-modified").textContent = document.lastModified;
-    </script>
 </html>
