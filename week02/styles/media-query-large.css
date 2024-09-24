@@ -2,6 +2,9 @@
     main {
         grid-template-columns: 1fr 1fr;
     }
+    section {
+        height: 300px;
+    }
     footer {
         position: absolute;
         bottom: 0;
