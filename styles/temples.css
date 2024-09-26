@@ -28,13 +28,6 @@ header {
     align-items: center;
 }
 
-
-nav {
-    max-width: 1000px;
-    margin: 10px;
-}
-
-/* small view navigation */
 #menu {
     font-size: 1.5rem;
     border: 0;
@@ -62,6 +55,8 @@ nav {
     list-style: none;
     color: #fff;
     right: 0;
+    max-width: 1000px;
+    margin: 10px;
 }
 
 .navigation a {
@@ -95,6 +90,7 @@ main {
     justify-items: center;
     margin: 0 5%;
 }
+
 figcaption {
     font-size: 1.2em;
     font-family: "roboto";
@@ -110,7 +106,7 @@ figure {
     border: 1px solid #000;
     width: 320px;
     border-radius: 5px;
-    
+
 }
 figure img {
     width: 300px;
