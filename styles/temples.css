@@ -95,13 +95,13 @@ main {
     justify-items: center;
     margin: 0 5%;
 }
-.temples-section p {
+figcaption {
     font-size: 1.2em;
     font-family: "roboto";
     text-align: center;
 
 }
-section {
+figure {
     margin-top: 30px;
     display: grid;
     justify-content: center;
@@ -111,7 +111,7 @@ section {
     width: 320px;
     border-radius: 5px;
 }
-section img {
+figure img {
     width: 300px;
     border-radius: 10px;
 }
