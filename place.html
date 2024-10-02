@@ -1,82 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WDD 131 - My place</title>
-    <meta name="description" content="A website describing my small town, this is an activity from week 03 of WDD-131">
-    <meta name="author" content="Josue A. Bailon Velasquez">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
-    <link rel="stylesheet" href="styles/place.css">
-    <link rel="stylesheet" href="styles/place-large.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WDD 131 - My place</title>
+  <meta name="description" content="A website describing my small town, this is an activity from week 03 of WDD-131">
+  <meta name="author" content="Josue A. Bailon Velasquez">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
+  <link rel="stylesheet" href="styles/place.css">
+  <link rel="stylesheet" href="styles/place-large.css">
 </head>
+
 <body>
-    <header>
-        <h1>Puno - Perú</h1>
-    </header>
-    <hr class="first-hr">
-    <main>
-        <picture class="img-puno" id="images">
-            <source id="large-img" srcset="images/Puno-picture-desktop-large.webp" media="(min-width: 1000px)">
-            <source id="medium-img" srcset="images/Puno-picture-desktop-medium.webp" media="(min-width: 500px)">
-            <img id="small-img" src="images/Puno-picture-mobil-small.webp" alt="Puno City" width="" height="">
-        </picture>
-        <button id="change-img">Change Image</button>
-        <hr class="second-hr">
-        <div class="data-section section">
-          <div class="title">
-            <h3>Data</h3>
-          </div>
-          <div class="data-row row">
-            <span class="label">Area:</span> <span class="value">15.57 km²</span>
-          </div>
-          <div class="data-row row">
-            <span class="label">Population:</span> <span class="value">145,179</span>
-          </div>
-          <div class="data-row row">
-            <span class="label">Capital:</span> <span class="value">Puno</span>
-          </div>
-          <div class="data-row row">
-            <span class="label">Languages:</span> <span class="value">Spanish, Aymara, Quechua</span>
-          </div>
-          <div class="data-row row">
-            <span class="label">Currency:</span> <span class="value">PEN</span>
-          </div>
-          <div class="data-row row">
-            <span class="label">Time Zone:</span> <span class="value">GMT-5</span>
-          </div>
-          <div class="data-row row">
-            <span class="label">Calling Code:</span> <span class="value">+51</span>
-          </div>
-          <div class="data-row row">
-            <span class="label">Internet TLD:</span> <span class="value">.pe</span>
-          </div>
-        </div>
-        <hr>
-        <div class="weather-section section">
-          <div class="title">
-            <h3>Weather</h3>
-            <img src="images/svg-weather.svg">
-          </div>
-          <div class="weather-row row">
-            <span class="label">Temperature:</span> <span id="temperature" class="value">40°F</span>
-        </div>
-        <div class="weather-row row">
-            <span class="label">Conditions:</span> <span class="value">Clear</span>
-        </div>
-        <div class="weather-row row">
-            <span class="label">Wind:</span> <span id="wind-speed" class="value">7 mph</span>
-        </div>
-        <div class="weather-row row">
-            <span class="label">Wind chill:</span> <span id="windchill" class="value">N/A</span>        
-        </div>
-    </main>
-    <footer>
-        <p>@2024 Josue A. Bailon Velasquez - Peru</p>
-        <p class="modification">Last Modification: <span id="last-modified"></span></p>
-    </footer>
-    <script src="scripts/place.js" defer></script>
+  <header>
+    <h1>Puno - Perú</h1>
+  </header>
+  <hr class="first-hr">
+  <main>
+    <picture class="img-puno" id="images">
+      <source id="large-img" srcset="images/Puno-picture-desktop-large.webp" media="(min-width: 1000px)">
+      <source id="medium-img" srcset="images/Puno-picture-desktop-medium.webp" media="(min-width: 500px)">
+      <img id="small-img" src="images/Puno-picture-mobil-small.webp" alt="Puno City" width="" height="">
+    </picture>
+    <button id="change-img">Change Image</button>
+    <hr class="second-hr">
+    <div class="data-section section">
+      <div class="title">
+        <h3>Data</h3>
+      </div>
+      <div class="data-row row">
+        <span class="label">Area:</span> <span class="value">15.57 km²</span>
+      </div>
+      <div class="data-row row">
+        <span class="label">Population:</span> <span class="value">145,179</span>
+      </div>
+      <div class="data-row row">
+        <span class="label">Capital:</span> <span class="value">Puno</span>
+      </div>
+      <div class="data-row row">
+        <span class="label">Languages:</span> <span class="value">Spanish, Aymara, Quechua</span>
+      </div>
+      <div class="data-row row">
+        <span class="label">Currency:</span> <span class="value">PEN</span>
+      </div>
+      <div class="data-row row">
+        <span class="label">Time Zone:</span> <span class="value">GMT-5</span>
+      </div>
+      <div class="data-row row">
+        <span class="label">Calling Code:</span> <span class="value">+51</span>
+      </div>
+      <div class="data-row row">
+        <span class="label">Internet TLD:</span> <span class="value">.pe</span>
+      </div>
+    </div>
+    <hr>
+    <div class="weather-section section">
+      <div class="title">
+        <h3>Weather</h3>
+        <img src="images/svg-weather.svg">
+      </div>
+      <div class="weather-row row">
+        <span class="label">Temperature:</span> <span id="temperature" class="value">40°F</span>
+      </div>
+      <div class="weather-row row">
+        <span class="label">Conditions:</span> <span class="value">Clear</span>
+      </div>
+      <div class="weather-row row">
+        <span class="label">Wind:</span> <span id="wind-speed" class="value">7 mph</span>
+      </div>
+      <div class="weather-row row">
+        <span class="label">Wind chill:</span> <span id="windchill" class="value">N/A</span>
+      </div>
+  </main>
+  <footer>
+    <p>@2024 Josue A. Bailon Velasquez - Peru</p>
+    <p class="modification">Last Modification: <span id="last-modified"></span></p>
+  </footer>
+  <script src="scripts/place.js" defer></script>
 </body>
+
 </html>
