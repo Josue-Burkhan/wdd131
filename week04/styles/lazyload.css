@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 50px;
+}
+
+main {
+    margin: 0 10%;
+    font-size: 1.3rem;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: justify;
+}
+main p {
+    margin: 100px 0;
+}
+img {
+    animation: fade 10s;
+}
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+footer {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100px;
+    background-color: rgb(106, 176, 216);
+}

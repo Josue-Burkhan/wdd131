@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .check {
+            color: #08dd08;
+        }
+        body {
+            height: 100vh;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            justify-items: center;
+        }
+        table {
+            border: thin solid black;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+        td, th {
+            border: 1px solid black;
+            width: 150px;
+        }
+        tr {
+            height: 50px;
+        }
+        thead tr:first-child {
+            background-color: #000;
+            color: #fff;
+        }
+        thead tr td {
+            background-color: #3a3a3a;
+            color: #fff;
+        }
+        thead tr td:first-child {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th colspan="4">ACME Wildwest Services</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Basic</td>
+                <td>Premiun</td>
+                <td>Deluxe</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Feature 1</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+            </tr>
+            <tr>
+                <td>Feature 2</td>
+                <td>❌</td>
+                <td class="check">✔</td>
+                <td class="check">✔</td>
+            </tr>
+            <tr>
+                <td>Feature 3</td>
+                <td>❌</td>
+                <td>❌</td>
+                <td class="check">✔</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
