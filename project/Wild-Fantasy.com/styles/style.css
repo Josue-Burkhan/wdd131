@@ -41,11 +41,11 @@ a {
 
 .first-pag {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
 }
 
 .fmg-cover {
-    height: 800px;
+    height: 500px;
 }
 
 .faq {
@@ -105,3 +105,11 @@ a {
     margin: 0;
 }
 
+@media screen and (min-width: 500px) {
+    .first-pag {
+        grid-template-columns: 1fr 1fr;
+    }
+    .fmg-cover {
+        height: 800px;
+    }
+}
