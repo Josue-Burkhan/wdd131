@@ -1,0 +1,98 @@
+:root {
+    --principalColor: #057091;
+    --secundaryColor: #c5e5f0;
+    --textColorWhite: #fff;
+    --famFont: "Open Sans";
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--principalColor);
+    color: var(--textColorWhite);
+}
+body {
+    font-family: var(--famFont);
+    font-weight: 400;
+}
+main {
+    width: 100%;
+}
+
+form {
+    margin: 30px 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--secundaryColor);
+    width: 90%;
+    padding: 20px 20px;
+}
+
+.product-option:hover {
+    background-color: var(--secundaryColor);
+}
+#product-name {
+    width: 100%;
+    height: 40px;
+}
+label{
+    justify-self: start;
+}
+
+.rating-section {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.rating {
+    display: grid;
+    width: 10%;
+}
+
+#installation-date {
+    width: 100%;
+    height: 40px;
+}
+.features-section {
+    justify-self: start;
+}
+#written-review {
+    min-height: 100px;
+    width: 100%;
+}
+#user-name {
+    width: 100%;
+    height: 40px;
+}
+.post-review {
+    width: 100%;
+    height: 40px;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--principalColor);
+    color: var(--textColorWhite);
+    font-size: 1.2rem;
+    text-align: center;
+    height: 70px;
+}
+
+@media screen and (min-width: 500px) {
+    main {
+        display: flex;
+        justify-content: center;
+    }
+    form {
+        width: 95%;
+    }
+}

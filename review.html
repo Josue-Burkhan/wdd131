@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WDD 131 - Forms completed</title>
+    <meta name="description" content="Forms Confirmation activities in the week 02 from WDD-131">
+    <meta name="author" content="Josue A. Bailon Velasquez">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        p{
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <p id="review-counter"></p>
+    </main>
+    <script>
+        window.onload = function () {
+            let reviewCount = localStorage.getItem('reviewCount');
+
+            if (!reviewCount) {
+                reviewCount = 0;
+            }
+
+            reviewCount++;
+
+            localStorage.setItem('reviewCount', reviewCount);
+
+            document.getElementById('review-counter').textContent = `Number of reviews completed: ${reviewCount}`;
+        };
+
+    </script>
+</body>
+
+</html>
