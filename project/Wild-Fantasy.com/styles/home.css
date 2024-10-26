@@ -398,6 +398,7 @@ footer {
         height: 500px;
         justify-self: center;
         margin-top: 30px;
+        display: block;
     }
 
     .resume-fmg h2 {
