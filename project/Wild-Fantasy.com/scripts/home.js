@@ -44,11 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
     backgroundWelcome.style.display = 'none';
     mainContent.style.display = 'block';
     clearInterval(intervalId);
+    document.getElementById("username-header").textContent = `User: ${localStorage.getItem("username")}`;
   } else {
     document.getElementById('username').addEventListener('keypress', (event) => {
       if (event.key === 'Enter') {
         const usernameInput = document.getElementById('username').value;
-        
+
         if (usernameInput) {
           localStorage.setItem('username', usernameInput);
           greeting.textContent = `Welcome, ${usernameInput}!`;
@@ -56,12 +57,13 @@ document.addEventListener('DOMContentLoaded', () => {
           inputMessege.style.display = 'none';
           greeting.style.fontSize = '3rem';
           greeting.style.textAlign = 'justify';
+          document.getElementById("username-header").textContent = `User: ${localStorage.getItem("username")}`;
 
           setTimeout(() => {
             welcomeScreen.style.display = 'none';
             backgroundWelcome.style.display = 'none';
             mainContent.style.display = 'block';
-            clearInterval(intervalId); 
+            clearInterval(intervalId);
           }, 3000);
         }
       }
@@ -74,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function lines() {
-  if (!localStorage.getItem('username')) { 
+  if (!localStorage.getItem('username')) {
     let sizeW = Math.random() * 22;
     let duration = Math.random() * 3;
     let e = document.createElement("div");
