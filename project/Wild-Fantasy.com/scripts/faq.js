@@ -1,5 +1,4 @@
 const headers = document.querySelectorAll('.faq-header');
-
 //Nav mobil
 const navigation = document.querySelector('.navigation');
 const menuBut = document.querySelector('#menu');
@@ -7,7 +6,7 @@ const faq = document.querySelector('.faq');
 
 menuBut.addEventListener('click', () => {
   navigation.style.display = navigation.style.display === 'flex' ? 'none' : 'flex';
-  faq.style.marginTop = faq.style.marginTop === '25%' ? '0' : '25%';
+  faq.style.marginTop = faq.style.marginTop === '130px' ? '0' : '130px';
 });
 
 
@@ -27,3 +26,7 @@ headers.forEach(header => {
     content.classList.toggle('show');
   });
 });
+
+
+document.getElementById("last-modified").textContent = document.lastModified;
+document.getElementById("username-header").textContent = `User: ${localStorage.getItem("username")}`;

@@ -8,12 +8,14 @@
     --famFont: "Open Sans";
     --specialFont: "Oswald";
 }
+
 body {
     overflow-x: hidden;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; 
+    min-height: 100vh;
 }
+
 main {
     width: 80%;
     display: grid;
@@ -29,9 +31,11 @@ main {
     padding-bottom: 0;
     box-sizing: border-box;
 }
+
 .backgrounds {
     background-image: none;
 }
+
 .backgrounds::after {
     content: '';
     position: absolute;
@@ -49,12 +53,16 @@ h3 {
     font-size: 2.5rem;
     text-align: center;
 }
-span {
+
+.volumes span {
     cursor: pointer;
     margin-left: 10%;
     font-size: 1.5rem;
     font-weight: 700;
+    height: 50px;
+    width: 400px;
 }
+
 span:hover {
     color: var(--primaryColor);
     font-size: 1.8rem;
@@ -65,31 +73,49 @@ span:hover {
     display: grid;
     grid-template-rows: 15% auto;
 }
+
 .volumes-content {
     display: grid;
     height: 40%;
     margin-top: 50px;
 }
+
+.volumes-content span {
+    border-bottom: #6d6d6d solid 1px;
+}
+
+.volumes-content span:last-of-type {
+    border-bottom: none;
+}
+
 .chapters {
     display: grid;
     grid-template-rows: 15% auto;
+    border-left: #000 solid 1px;
 }
+
 .chapters-content {
     display: grid;
     margin-top: 50px;
 }
+
 .chapert-list {
     display: none;
     height: 70%;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    align-items: center;
+    justify-items: center;
 }
+
 .chapters-vol1 {
     display: grid;
 }
+
 .chapert-list a {
     width: 200px;
     height: 50px;
     font-size: 1.5rem;
+    text-align: center;
 }
 
 .chapert-list a:hover {
@@ -100,7 +126,8 @@ span:hover {
 
 
 
-footer span, footer span:hover {
+footer span,
+footer span:hover {
     color: #fff;
     font-size: 1.3rem;
     text-align: center;
@@ -113,6 +140,7 @@ footer span, footer span:hover {
     opacity: 0.6;
     z-index: -2;
 }
+
 @media screen and (max-width: 900px) {
     body {
         margin: 0;
@@ -120,32 +148,42 @@ footer span, footer span:hover {
         overflow-x: hidden;
         display: flex;
         flex-direction: column;
-        min-height: 100vh; 
+        min-height: 100vh;
     }
+
     h3 {
         font-size: 2rem;
     }
-    span {
+
+    .volumes span {
         font-size: 1.3rem;
         margin-left: 0;
+        height: 100%;
+        width: 100%;
+        border: none;
     }
+
     main {
-        grid-template-columns: 1fr;
         flex: 1;
         width: 100%;
         overflow-y: auto;
         padding: 20px;
         box-sizing: border-box;
         border-radius: 0;
-    }
+        grid-template-columns: 1fr;
+    }    
+
     .volumes {
         grid-template-rows: auto 200px;
 
     }
+
     .chapters {
         height: 100%;
         grid-template-rows: auto auto;
+        border-left: none;
     }
+
     .chapert-list {
         align-items: center;
         justify-content: center;
@@ -155,12 +193,14 @@ footer span, footer span:hover {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     }
+
     .chapert-list a {
         width: auto;
         height: 50px;
         font-size: 1.3rem;
         margin-left: 0;
     }
+
     .volumes-content {
         align-items: center;
         justify-content: center;
@@ -169,6 +209,9 @@ footer span, footer span:hover {
         width: 100%;
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        border-bottom: none;
+        text-align: center;
+        border: none;
     }
-    
+
 }

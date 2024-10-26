@@ -1,5 +1,4 @@
-
-
+document.getElementById("last-modified").textContent = document.lastModified;
 //Nav mobil
 const headers = document.querySelectorAll('.faq-header');
 const navigation = document.querySelector('.navigation');
@@ -92,3 +91,6 @@ function lines() {
     }, 5000);
   }
 }
+
+
+document.getElementById("username-header").textContent = `User: ${localStorage.getItem("username")}`;

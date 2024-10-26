@@ -1,5 +1,6 @@
 document.getElementById("last-modified").textContent = document.lastModified;
 
+document.getElementById("username-header").textContent = `User: ${localStorage.getItem("username")}`;
 
 //Nav mobil
 const headers = document.querySelectorAll('.faq-header');
