@@ -1,13 +1,14 @@
-const headers = document.querySelectorAll('.faq-header');
+
 
 //Nav mobil
+const headers = document.querySelectorAll('.faq-header');
 const navigation = document.querySelector('.navigation');
 const menuBut = document.querySelector('#menu');
 const firstPag = document.querySelector('.first-pag');
 
 menuBut.addEventListener('click', () => {
   navigation.style.display = navigation.style.display === 'flex' ? 'none' : 'flex';
-  firstPag.style.marginTop = firstPag.style.marginTop === '15%' ? '0' : '15%';
+  firstPag.style.marginTop = firstPag.style.marginTop === '130px' ? '0' : '130px';
 });
 
 
@@ -28,103 +29,66 @@ headers.forEach(header => {
   });
 });
 
+
+
 let intervalId;
-//Animation 
-function lines() {
-  let sizeW = Math.random() * 22;
-  let duration = Math.random() * 3;
-  let e = document.createElement("div");
-  e.setAttribute("class", "circle");
-  document.body.appendChild(e);
-  e.style.width = 12 + sizeW + "px";
-  e.style.left = Math.random() * innerWidth + "px";
-  e.style.animationDuration = 2 + duration + "s";
+document.addEventListener('DOMContentLoaded', () => {
+  const username = localStorage.getItem('username');
+  const greeting = document.getElementById('greeting');
+  const welcomeScreen = document.getElementById('welcome-screen');
+  const inputMessege = document.getElementById('name-input-container');
+  const backgroundWelcome = document.querySelector('.background-welcome-screen');
+  const mainContent = document.getElementById('main-content');
 
-  setTimeout(function () {
-    document.body.removeChild(e);
-  }, 5000);
-}
+  if (username) {
+    welcomeScreen.style.display = 'none';
+    backgroundWelcome.style.display = 'none';
+    mainContent.style.display = 'block';
+    clearInterval(intervalId);
+  } else {
+    document.getElementById('username').addEventListener('keypress', (event) => {
+      if (event.key === 'Enter') {
+        const usernameInput = document.getElementById('username').value;
+        
+        if (usernameInput) {
+          localStorage.setItem('username', usernameInput);
+          greeting.textContent = `Welcome, ${usernameInput}!`;
+          greeting.style.display = 'block';
+          inputMessege.style.display = 'none';
+          greeting.style.fontSize = '3rem';
+          greeting.style.textAlign = 'justify';
 
-intervalId = setInterval(function () {
-  lines();
-}, 200);
+          setTimeout(() => {
+            welcomeScreen.style.display = 'none';
+            backgroundWelcome.style.display = 'none';
+            mainContent.style.display = 'block';
+            clearInterval(intervalId); 
+          }, 3000);
+        }
+      }
+    });
 
-//First messege
-document.getElementById('username').addEventListener('keypress', (event) => {
-  if (event.key === 'Enter') {
-    const username = document.getElementById('username').value;
-    const greeting = document.getElementById('greeting');
-    const welcomeScreen = document.getElementById('welcome-screen');
-    const inputMessege = document.getElementById('name-input-container');
-    const circles = document.querySelector('.circle');
-    const backgroundWelcome = document.querySelector('.background-welcome-screen');
-
-    inputMessege.style.display = 'none';
-    circles.style.display = 'none';
-
-    if (username) {
-      greeting.textContent = `Welcome, ${username}!`;
-      greeting.style.display = 'block';
-
-      greeting.style.fontSize = '3rem';
-      greeting.style.textAlign = 'justify';
-      clearInterval(intervalId);
-
-      setTimeout(() => {
-        welcomeScreen.style.display = 'none';
-        backgroundWelcome.style.display = 'none';
-        mainContent.style.display = 'block';
-      }, 3000);
-    }
+    intervalId = setInterval(function () {
+      lines();
+    }, 200);
   }
 });
 
-var firebaseConfig = {
-  apiKey: "AIzaSyBPPlphgf0VaJ9d_lTOegBrgwMvDBXmD8A",
-  authDomain: "wild-fantasy.firebaseapp.com",
-  projectId: "wild-fantasy",
-  storageBucket: "wild-fantasy.appspot.com",
-  messagingSenderId: "321776452580",
-  appId: "1:321776452580:web:37fa3ca2ebe0c6f5227df1"
-};
-firebase.initializeApp(firebaseConfig);
+function lines() {
+  if (!localStorage.getItem('username')) { 
+    let sizeW = Math.random() * 22;
+    let duration = Math.random() * 3;
+    let e = document.createElement("div");
+    e.setAttribute("class", "circle");
+    document.body.appendChild(e);
+    e.style.width = 12 + sizeW + "px";
+    e.style.left = Math.random() * innerWidth + "px";
+    e.style.animationDuration = 2 + duration + "s";
 
-var database = firebase.database();
-
-var likeButton = document.getElementById("likeButton");
-var likeCountRef = database.ref("likes");
-
-likeCountRef.on("value", function (snapshot) {
-  document.getElementById("likeCount").textContent = snapshot.val();
-});
-
-likeButton.addEventListener("click", function () {
-  likeCountRef.transaction(function (currentLikes) {
-    return (currentLikes || 0) + 1;
-  });
-});
-
-/*
-  // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyBPPlphgf0VaJ9d_lTOegBrgwMvDBXmD8A",
-  authDomain: "wild-fantasy.firebaseapp.com",
-  databaseURL: "https://wild-fantasy-default-rtdb.firebaseio.com",
-  projectId: "wild-fantasy",
-  storageBucket: "wild-fantasy.appspot.com",
-  messagingSenderId: "321776452580",
-  appId: "1:321776452580:web:37fa3ca2ebe0c6f5227df1",
-  measurementId: "G-Y0GW3JCW59"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-*/
+    setTimeout(function () {
+      if (e) {
+        document.body.removeChild(e);
+      }
+    }, 5000);
+  }
+}

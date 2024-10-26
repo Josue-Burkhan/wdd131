@@ -1,7 +1,7 @@
 :root {
     --primaryColor: #248c9e;
     --secundaryColor: #c5c5c5;
-    --blurWhite: #91919181;
+    --blurWhite: #91919162;
     --backgroundColor: #cccccc;
     --whiteColor: #fff;
     --textColor: #000;
@@ -169,10 +169,17 @@ a {
 }
 
 .faq {
-    max-width: 800px;
+    min-height: 80vh;
+    max-width: 900px;
     margin: 20px auto;
+    display: grid;
+    align-self: center;
+    grid-template-rows: 30% auto;
 }
-
+.faq h2 {
+    font-size: 4rem;
+    align-self: end;
+}
 .faq-item {
     background-color: var(--secundaryColor);
     border-radius: 5px;
@@ -217,6 +224,7 @@ a {
 }
 
 .faq-content.show {
+    padding: 20px 10px;
     max-height: 700px;
     transition: max-height 2s ease;
 }
@@ -354,6 +362,9 @@ footer {
 }
 
 @media screen and (max-width: 900px) {
+    body {
+    max-width: 100vw;
+    }
     nav {
         grid-template-columns: 60% 40%;
     }
@@ -376,10 +387,6 @@ footer {
         height: 500px;
         justify-self: center;
         margin-top: 30px;
-    }
-
-    body {
-        background-color: #248c9e;
     }
 
     .resume-fmg h2 {
@@ -411,5 +418,9 @@ footer {
     }
     #greeting {
         font-size: 3rem;
+    }
+    .faq-item {
+        width: 90%;
+        justify-self: center;
     }
 }
