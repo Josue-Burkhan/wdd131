@@ -1,7 +1,9 @@
 :root {
     --primaryColor: #248c9e;
     --secundaryColor: #c5c5c5;
-    --backgroundColor: #e4e4e4;
+    --blurWhite: #91919181;
+    --backgroundColor: #cccccc;
+    --whiteColor: #fff;
     --textColor: #000;
     --famFont: "Open Sans";
     --specialFont: "Oswald";
@@ -10,22 +12,56 @@
 * {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 body {
     background-color: var(--backgroundColor);
     font-family: var(--famFont);
 }
+
 h2 {
     text-align: center;
     margin-bottom: 30px;
     font-family: var(--specialFont);
 }
+
 nav {
     display: grid;
     grid-template-columns: 15% 85%;
     align-items: center;
     justify-content: center;
+    justify-items: center;
+}
+
+/*Menu*/
+
+#menu {
+    font-size: 1.5rem;
+    border: 0;
+    background: none;
+    color: #000;
+    position: absolute;
+    right: 5%;
+    top: 30px;
+
+}
+
+#menu {
+    display: none;
+}
+
+#menu.open::before {
+    content: "x";
+    color: #fff;
+}
+
+.open a {
+    display: block;
+}
+
+.logo {
+    z-index: 5;
 }
 
 a {
@@ -33,19 +69,103 @@ a {
     color: black;
 }
 
-.navegation {
-    width: 100%;
-    font-size: 1.4rem;
+.navigation {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    font-size: 1.7rem;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+}
+
+.navigation a {
+    margin: 0 15px;
+}
+
+.navigation a:hover {
+    color: var(--primaryColor);
+}
+
+.backgrounds {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 40px;
+    background-image: url("/project/Wild-Fantasy.com/images/main-background.webp");
+    background-size: cover;
+    background-position: center center;
+    z-index: -1;
+    filter: blur(6px);
+}
+
+.backgrounds::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--backgroundColor);
+    opacity: 0.6;
 }
 
 .first-pag {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 10% 30px 10%;
+    background-color: var(--blurWhite);
+    border-radius: 30px;
+    padding: 50px 0;
+}
+
+.resume-fmg {
+    display: grid;
+    grid-template-rows: 150px 300px 100px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    align-self: center;
+    text-align: justify;
+}
+
+.resume-fmg h2 {
+    font-size: 3.5rem;
+}
+
+.resume-fmg p {
+    font-size: 1.4rem;
+    margin: 0 30px;
+}
+
+.resume-fmg button {
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: var(--primaryColor);
+    color: var(--whiteColor);
+    font-size: 1.1rem;
+    border: none;
+    cursor: pointer;
+    box-shadow: 5px 5px 10px #000000a8;
+    z-index: 5;
+}
+
+.resume-fmg button:hover {
+    background-color: #19606d;
 }
 
 .fmg-cover {
-    height: 500px;
+    height: 700px;
+    border-radius: 20px;
+    box-shadow: 15px 15px 10px #000000a8;
 }
 
 .faq {
@@ -105,11 +225,191 @@ a {
     margin: 0;
 }
 
-@media screen and (min-width: 500px) {
-    .first-pag {
-        grid-template-columns: 1fr 1fr;
+/*First Contact*/
+#name-input-container {
+    display: flex;
+    flex-direction: column;
+    z-index: 11;
+}
+
+label {
+    font-size: 3rem;
+    z-index: 11;
+}
+
+input[type="text"] {
+    margin-top: 20px;
+    padding: 10px;
+    width: 500px;
+    height: 50px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 18px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]::placeholder {
+    color: #999;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primaryColor);
+}
+
+/*welcome imput*/
+#welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    background: none;
+}
+
+.background-welcome-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    z-index: 9;
+}
+
+#name-input-container {
+    text-align: center;
+}
+
+#greeting {
+    margin-top: 20px;
+}
+
+#main-content {
+    padding: 20px;
+    text-align: center;
+}
+
+/*Animation*/
+
+.circle {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    aspect-ratio: 1/1;
+    background: var(--primaryColor);
+    box-shadow: 0 0 10px #ffc918, 0 0 20px #ffc918,
+        0 0 30px #8710ff, 0 0 50px #8000FF;
+    border-radius: 50%;
+    animation: animate 5s linear infinite;
+    z-index: 9;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
     }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100vh);
+        opacity: 1;
+    }
+}
+
+.circle::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 25%;
+    width: 50%;
+    height: 100vh;
+    opacity: 0.5s;
+    background: linear-gradient(#8000FF, transparent);
+    z-index: -1;
+}
+
+
+
+
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #057091;
+    color: #fff;
+    font-size: 1.3rem;
+    text-align: center;
+    height: 70px;
+}
+
+@media screen and (max-width: 900px) {
+    nav {
+        grid-template-columns: 60% 40%;
+    }
+
+    .navigation {
+        display: none;
+    }
+
+    #menu {
+        display: block;
+    }
+
+    .first-pag {
+        grid-template-columns: 1fr;
+        margin: 0;
+        border-radius: 0;
+    }
+
     .fmg-cover {
-        height: 800px;
+        height: 500px;
+        justify-self: center;
+        margin-top: 30px;
+    }
+
+    body {
+        background-color: #248c9e;
+    }
+
+    .resume-fmg h2 {
+        font-size: 2.6rem;
+    }
+
+    .navigation {
+        width: 250px;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        justify-self: end;
+        text-align: end;
+    }
+
+    .resume-fmg h2 {
+        font-size: 3.2rem;
+    }
+
+    input[type="text"] {
+        margin-top: 20px;
+        width: 85%;
+        height: 30px;
+    }
+
+    label {
+        font-size: 2rem;
+    }
+    #greeting {
+        font-size: 3rem;
     }
 }

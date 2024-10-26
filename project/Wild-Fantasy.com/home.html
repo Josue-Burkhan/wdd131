@@ -17,21 +17,34 @@
 </head>
 
 <body>
+    <div class="background-welcome-screen"></div>
+    <div id="welcome-screen">
+        <div id="name-input-container">
+                <label for="username">Enter your name:</label>
+                <input type="text" id="username" placeholder="Press Enter">
+        </div>
+        <div id="greeting" style="display: none;"></div>
+    </div>
     <header>
         <nav>
-            <img src="https://wild-fantasy.com/wp-content/uploads/2024/05/cropped-Wild-Fantasy-Logo-185x108.png"
-                alt="logo-FMG">
-            <div class="navegation">
-                <a href="#">Home</a>
-                <a href="#">Chapters</a>
-                <a href="#">About Me</a>
+            <a href="home.html" class="logo"><img
+                    src="https://wild-fantasy.com/wp-content/uploads/2024/05/cropped-Wild-Fantasy-Logo-185x108.png"
+                    alt="logo-FMG"></a>
+            <div class="navigation">
+                <a href="home.html">Home</a>
+                <a href="chapters.html">Chapters</a>
+                <a href="faq.html">FAQ</a>
                 <a href="#">Wiki</a>
             </div>
+            <button id="menu">☰</button>
         </nav>
     </header>
     <main>
+        <div class="backgrounds">
+        </div>
         <div class="first-pag">
             <div class="resume-fmg">
+                <h2>THE PATH OF LIFE</h2>
                 <p>Christopher Bristol was a great person, but with bad luck in life. After dying in an accident, his
                     soul
                     travels to the afterlife, but along the way his soul deviates, taking him to a completely new planet
@@ -40,40 +53,12 @@
                 <button>Last Chapter</button>
             </div>
             <img class="fmg-cover" src="images/cover.webp" alt="FMG Cover">
-            <button id="likeButton">likes</button>
-            <span id="likeCount">0</span>
-        </div>
-        <div class="second-pag">
-            <div class="faq">
-                <h2>FAQ</h2>
-                <div class="faq-div">
-                    <div class="faq-item">
-                        <div class="faq-header">What is the purpose of the website?</div>
-                        <div class="faq-content">
-                            <p>The purpose of this website is to showcase original content written on Wild Fantasy.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-header">Is the content current or from past writings?</div>
-                        <div class="faq-content">
-                            <p>There are past writings, but the writings are also updated every time a new chapter comes
-                                out.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <div class="faq-header">Question Number 3</div>
-                        <div class="faq-content">
-                            <p>ontent content content contentContent content content contentContent content content
-                                content Content content content contentContent content content contentContent content
-                                content content Content content content contentContent content content contentContent
-                                content content content Content content content contentContent content content
-                                contentContent content content content</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
+    <footer>
+        <p>©2024 Josue A. Bailon Velasquez</p>
+        <p class="modification">Last Modification: <span id="last-modified"></span></p>
+    </footer>
     <script src="scripts/home.js" defer></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
